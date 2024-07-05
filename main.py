@@ -57,22 +57,11 @@ input_data = np.array([[ph, Solids, Sulfate, Organic_carbon, Turbidity, Hardness
 water_prediction = ''
 
 # Tombol prediksi
-
 if st.button('Test Prediksi Air'):
-    water_prediction= model_water_quality_prediction.predict(input_data)
-
+    water_prediction = model_water_quality_prediction.predict(input_data)
     if water_prediction[0] == 1:
         water_prediction = 'Air dapat Diminum'
     else:
-       water_prediction = 'Air Tidak dapat Diminum'
-    
-     
-if st.button('Test Prediksi Air'):
-    water_prediction = model_water_quality_prediction.predict(input_data)
-
-    if water_prediction[0] == 1:
-        water_prediction= 'Air dapat Diminum'
-    else:
-       water_prediction= 'Air Tidak dapat Diminum'
-    
+        water_prediction = 'Air Tidak dapat Diminum'
+        
     st.success(water_prediction)
