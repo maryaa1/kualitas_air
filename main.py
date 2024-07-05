@@ -58,7 +58,21 @@ water_prediction = ''
 
 # Tombol prediksi
 
-if st.button('Prediksi'):
-    prediction = model_water_quality_prediction.predict(input_features.reshape(1, -1))
-    st.write(f'Prediksi kualitas air: {"Layak minum" if prediction[0] > 0.5 else "Tidak layak minum"}')
+if st.button('Test Prediksi Air'):
+    water_prediction= model_water_quality_prediction.predict(input_data)
+
+    if water_prediction[0] == 1:
+        water_prediction = 'Air dapat Diminum'
+    else:
+       water_prediction = 'Air Tidak dapat Diminum'
+    
      
+if st.button('Test Prediksi Air'):
+    water_prediction = model_water_quality_prediction.predict(input_data)
+
+    if water_prediction[0] == 1:
+        water_prediction= 'Air dapat Diminum'
+    else:
+       water_prediction= 'Air Tidak dapat Diminum'
+    
+    st.success(water_prediction)
