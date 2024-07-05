@@ -1,10 +1,10 @@
-import pickle
 import streamlit as st
 import numpy as np
+from tensorflow.keras.models import load_model
 
 # Memuat model yang disimpan
-filename = 'model_water_quality_prediction.sav'
-model_water_quality_prediction = pickle.load(open('model_water_quality_prediction.sav', 'rb'))
+filename = 'model_water_quality_prediction.h5'
+model_water_quality_prediction = load_model(filename)
 
 # Judul web
 st.title('Prediksi Kualitas Air')
