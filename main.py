@@ -62,4 +62,3 @@ if st.button('Prediksi'):
     prediction = model_water_quality_prediction.predict(input_features.reshape(1, -1))
     st.write(f'Prediksi kualitas air: {"Layak minum" if prediction[0] > 0.5 else "Tidak layak minum"}')
      
-st.success(water_quality)
