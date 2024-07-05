@@ -54,15 +54,12 @@ Turbidity = float(Turbidity.replace(',', '')) if Turbidity else 0.0
 input_data = np.array([[ph, Solids, Sulfate, Organic_carbon, Turbidity, Hardness, Chloramines, Conductivity, Trihalomethanes]])
 
 # Prediksi
-water_quality = ''
+water_prediction = ''
 
 # Tombol prediksi
-if st.button('Test Prediksi Air'):
-    water_quality = water_quality_model.predict(input_data)
 
-    if water_quality[0] == 1:
-        water_quality = 'Air dapat Diminum'
-    else:
-        water_quality = 'Air Tidak dapat Diminum'
-    
-    st.success(water_quality)
+if st.button('Prediksi'):
+    prediction = model_water_quality_prediction.predict(input_features.reshape(1, -1))
+    st.write(f'Prediksi kualitas air: {"Layak minum" if prediction[0] > 0.5 else "Tidak layak minum"}')
+     
+st.success(water_quality)
