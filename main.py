@@ -61,7 +61,9 @@ if st.button('Test Prediksi Air'):
     water_prediction = model_water_quality_prediction.predict(input_data)
     if water_prediction[0] == 1:
         water_prediction = 'Air dapat Diminum'
+        color = 'green'
     else:
         water_prediction = 'Air Tidak dapat Diminum'
-    st.markdown(f'<p style="color:red;">{water_prediction}</p>', unsafe_allow_html=True)
+        color = 'red
+   
     st.success(water_prediction)
