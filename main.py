@@ -64,6 +64,6 @@ if st.button('Test Prediksi Air'):
         color = 'green'
     else:
         water_prediction = 'Air Tidak dapat Diminum'
-        color = 'red
+        color = 'red'
    
     st.success(water_prediction)
