@@ -63,5 +63,5 @@ if st.button('Test Prediksi Air'):
         water_prediction = 'Air dapat Diminum'
     else:
         water_prediction = 'Air Tidak dapat Diminum'
-        
+    st.markdown(f'<p style="color:red;">{result_text}</p>', unsafe_allow_html=True)
     st.success(water_prediction)
